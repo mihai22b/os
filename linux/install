@@ -1,0 +1,24 @@
+• Dual booting with Windows
+
+Back up the contents of the EFI partition (e.g. to a .zip file).
+Later, if the partition has problems, format it and restore the backup.
+To store the backup on a partition of the internal disk, use e.g. ext4:
+Windows might automatically encrypt FAT32 partitions it finds.
+
+• Partitions
+
+GPT partition table.
+
+Ubuntu:
+1 GB, EFI System Partition, /boot/efi
+(The partition for /boot/efi already exists if dual booting with Windows.)
+1 GB, ext4, /boot
+rest, physical volume for encryption
+Wait.
+The encrypted device with one partition will appear at the top of the list.
+Set it:
+ext4, /
+
+• Check that the real-time clock is set to UTC
+
+timedatectl
