@@ -1,0 +1,14 @@
+• Making the USB installation disk from Linux
+
+Download the Windows ISO file. Right click, Open With Disk Image Mounter.
+It contains a file larger than 4 GB, too large for FAT32.
+
+Format the USB disk with GPT.
+Make a FAT32 partition. Copy to it all files in the ISO except ‘sources’
+but including ‘sources/boot.wim’.
+Make an NTFS partition. Copy to it all files in the ISO.
+
+• Dual booting with Linux
+
+Disable Fast Startup (or Linux might not detect some hardware).
+Set the timezone to UTC (Windows sets the hardware clock to local time).
